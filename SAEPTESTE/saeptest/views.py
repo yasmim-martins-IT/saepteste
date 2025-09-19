@@ -10,12 +10,12 @@ class UsuarioListCreateAPIView(ListCreateAPIView):
     def get_queryset(self):
         queryset = super().get_queryset()
         nome = self.request.query_params.get('nome')
-        serie = self.request.query_params.get('serie')
+        email = self.request.query_params.get('email')
 
         if nome:
             queryset = queryset.filter(nome__icontains=nome)
-        if serie:
-            queryset = queryset.filter(serie__icontains=serie)
+        if email:
+            queryset = queryset.filter(email__icontains=email)
         return queryset
 
 

@@ -29,8 +29,8 @@ class Tarefa(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     descricao = models.CharField(max_length=250)
     setor = models.CharField(max_length=250)
-    prioridade = models.CharField(max_length=10, choices=PRIORIDADES_CHOICES, default='baixo')
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='a_fazer')
+    prioridade = models.CharField(max_length=10, choices=PRIORIDADES_CHOICES)
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES)
     data_criacao = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
